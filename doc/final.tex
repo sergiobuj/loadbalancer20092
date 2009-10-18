@@ -1,0 +1,101 @@
+\documentclass[
+	%draft,
+	%submission,
+	%compressed,
+	final,
+	%
+	%technote,
+	%internal,
+	%submitted,
+	%inpress,
+	%reprint,
+	%
+	%titlepage,
+	notitlepage,
+	%anonymous,
+	narroweqnarray,
+	inline,
+	twoside,
+         %invited,
+	]{ieee}
+
+\newcommand{\latexiie}{\LaTeX2{\Large$_\varepsilon$}}
+
+%Code
+	\usepackage{fancyvrb}
+	\usepackage{listings}
+	\DefineVerbatimEnvironment{code}{Verbatim}{fontsize=\large}
+	\DefineVerbatimEnvironment{example}{Verbatim}{fontsize=\large}
+%edoC
+
+%Español
+	\usepackage[utf8]{inputenc}
+	\usepackage[spanish]{babel}
+%loñapsE
+
+\begin{document}
+
+\title[Load Balancer]{
+       Telemática\\ Load Balancer}
+
+
+\author[]{Sebastián Arcila Valenzuela (\textit{sarcilav@eafit.edu.co})
+\and{}y Sergio Botero Uribe (\textit{sbotero2@eafit.edu.co}).
+}
+
+\journal{ST0255-031 Telemática}
+\titletext{, \today}
+\maketitle               
+
+\begin{abstract} 
+Documentación de la práctica del load balancer para servidores web que implementa 4 métodos de balanceo. Esta documentación
+contiene los diagramas requeridos para la entrega y la explicación de los métodos.
+\end{abstract}
+
+\section{Introducción}
+	\input{docmaestro/introduccion}
+
+\section{Protocolos implementados}
+	\input{docmaestro/protocolos}
+
+\section{Diagrama de secuencias UML}
+	\input{diagramas/uml}
+
+\section{Máquina de estado finito}
+	\input{diagramas/maquina}
+	
+\section{Pseudocódigos de los métodos}
+	\begin{itemize}
+	\item Round Robin.
+	\input{seudo/roundrobin}
+	\item Menor número de conexiones.
+	\input{seudo/leastconnections}
+	\item Carga en servidor.
+	\input{seudo/agent}
+	\item Método del grupo.
+	\input{seudo/nuestro}
+	\end{itemize}
+	
+	\triangle PS: En los seudo códigos se puede ver que en muchos pasos se debe escribir y leer información, esto se debe a que mediante el uso
+	de procesos que lo que hacen es una copia idéntica y no tendría sentido usar una variable para manejar la información
+
+\section{Arquitectura del sistema}
+	\input{docmaestro/arquitectura}
+
+\section{Pruebas}
+	\input{docmaestro/pruebas}
+	
+\section{Conclusiones}
+	\input{docmaestro/conclusiones}
+	
+\begin{thebibliography}{1}
+
+\bibitem{GitHub}
+\newblock{GitHub}
+\newblock {\em http://github.com/sarcilav/loadbalancer20092}
+\newblock Sitio donde se encuentra todo el desarrollo y código e la práctica.
+
+\end{thebibliography}
+
+
+\end{document}

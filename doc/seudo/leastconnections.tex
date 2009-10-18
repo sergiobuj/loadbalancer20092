@@ -1,0 +1,27 @@
+%seudocódigo para el menor número de conexiones
+
+\begin{code}
+
+LeastConnection
+	read( server_array )
+	connections_array
+	
+	while incoming_connection
+		fork
+			read( connections_array )
+			index = position_of_lower_value( connections_array )
+			if( connect2( server_array_{index} ) == success )
+				connections_array_{index} = connections_array_{index} + 1
+				write( connections_array )
+				write( index )
+			endif
+		exitfork
+		read( connections_array )
+		read( index )
+		connections_array_{index} = connections_array_{index} - 1
+		write( connections_array )
+	endwhile
+
+endLeastConnection
+
+\end{code}

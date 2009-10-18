@@ -1,0 +1,38 @@
+%agente de servidor ocupado
+
+\vartriangleright Idea: Esta implementación requiere de la presencia de un agente en cada servidor que se encargará de enviar básicamente
+la información sobre las cargas del procesador para que el método pueda enviar la conexión al servidor que se encuentre menos ocupado en el
+momento que se requiera.
+
+\begin{code}
+
+ServerLoad
+
+	read (agents_array )
+	read( servers_array )
+	
+	while incoming_connection
+	
+		fork
+			good_server = ask_for_load( agent_array_{0} )
+			it=1
+			server_no
+			while i < length( agents_array )
+				server_load = ask_for_load( agent_array_{it} )
+				if ( server_load < good_server )
+					server_no = it
+				endif
+			
+			it = it + 1
+			endwhile
+			
+			connect2( server_array_{server_no} )
+			
+		
+		exitfork
+	
+	endwhile
+
+endServerLoad
+
+\end{code}

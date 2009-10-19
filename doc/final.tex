@@ -23,9 +23,12 @@
 
 %Code
 	\usepackage{fancyvrb}
+	\usepackage{moreverb}
 	\usepackage{listings}
-	\DefineVerbatimEnvironment{code}{Verbatim}{fontsize=\large}
-	\DefineVerbatimEnvironment{example}{Verbatim}{fontsize=\large}
+%	\DefineVerbatimEnvironment{code}{Verbatim}{fontsize=\small}
+%	\DefineVerbatimEnvironment{example}{Verbatim}{fontsize=\small}
+	\usepackage{amssymb}
+	\def\myTabs{2}
 %edoC
 
 %Español
@@ -65,6 +68,8 @@ contiene los diagramas requeridos para la entrega y la explicación de los méto
 	\input{diagramas/maquina}
 	
 \section{Pseudocódigos de los métodos}
+
+	En todos los métodos se espera leer un arreglo con las direcciones de servidores que estará contenida en un archivo de configuración.
 	\begin{itemize}
 	\item Round Robin.
 	\input{seudo/roundrobin}
@@ -76,8 +81,9 @@ contiene los diagramas requeridos para la entrega y la explicación de los méto
 	\input{seudo/nuestro}
 	\end{itemize}
 	
-	\triangle PS: En los seudo códigos se puede ver que en muchos pasos se debe escribir y leer información, esto se debe a que mediante el uso
-	de procesos que lo que hacen es una copia idéntica y no tendría sentido usar una variable para manejar la información
+	$\triangle$ PS: En los seudo códigos se puede ver que en muchos pasos se debe escribir y leer información, esto se debe a que mediante el uso
+	de procesos que lo que hacen es una copia idéntica y no tendría sentido usar una variable para manejar la información porque esta no podría ser
+	vista por los otros procesos.
 
 \section{Arquitectura del sistema}
 	\input{docmaestro/arquitectura}
@@ -91,9 +97,10 @@ contiene los diagramas requeridos para la entrega y la explicación de los méto
 \begin{thebibliography}{1}
 
 \bibitem{GitHub}
-\newblock{GitHub}
-\newblock {\em http://github.com/sarcilav/loadbalancer20092}
-\newblock Sitio donde se encuentra todo el desarrollo y código e la práctica.
+\newblock{GitHub$^{\rm TM}$ - Social codign}\\
+\newblock {\em http://github.com/sarcilav/loadbalancer20092} \\
+\newblock {\em http://github.com/sergiobuj/loadbalancer20092} \\
+\newblock Sitios donde se encuentra todo el desarrollo y código e la práctica.
 
 \end{thebibliography}
 

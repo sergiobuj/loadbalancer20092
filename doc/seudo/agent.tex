@@ -1,38 +1,32 @@
 %agente de servidor ocupado
 
-\vartriangleright Idea: Esta implementación requiere de la presencia de un agente en cada servidor que se encargará de enviar básicamente
+$\vartriangleright$ Idea: Esta implementación requiere de la presencia de un agente en cada servidor que se encargará de enviar básicamente
 la información sobre las cargas del procesador para que el método pueda enviar la conexión al servidor que se encuentre menos ocupado en el
 momento que se requiera.
 
-\begin{code}
+\begin{verbatimtab}[\myTabs]
 
 ServerLoad
-
 	read (agents_array )
 	read( servers_array )
 	
 	while incoming_connection
-	
 		fork
-			good_server = ask_for_load( agent_array_{0} )
+			good_server = get_load(agent_array[0])
 			it=1
 			server_no
 			while i < length( agents_array )
-				server_load = ask_for_load( agent_array_{it} )
+				server_load=get_load(agent_array[it])
 				if ( server_load < good_server )
 					server_no = it
 				endif
 			
 			it = it + 1
 			endwhile
-			
-			connect2( server_array_{server_no} )
-			
-		
+			connect2( server_array[server_no] )
 		exitfork
-	
 	endwhile
-
+	
 endServerLoad
 
-\end{code}
+\end{verbatimtab}

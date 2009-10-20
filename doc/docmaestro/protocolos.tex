@@ -24,14 +24,18 @@ Linux, ya que la información que se toma de cada servidor se toma con comandos 
 para poder que el agente se ejecute sobre él. El agente necesita el puerto 9000 sólo para recibir las peticiones del balanceador.
 
 \end{enumerate}
-
-   \item Vocabulario de mensajes.\\
+\item Vocabulario de mensajes.\\
    Los mensajes enviados desde el balanceador al agente son:``lc'' y ``lbs''. Y para cada uno hay una respuesta por parte del balanceador que consiste
    en un string de tres números, del cual sólo importa el primero, y un valor flotante indicando carga del procesador respectivamente.
    ``lc'' representa el método de balanceo por menor número de conexiones activas. y ``lbs'' es el método del servidor con la menor carga o
    ``Least Busy Server''
-    \item Codificación o formato de mensajes.\\
+\item Codificación o formato de mensajes.\\
     Los mensajes se querían implementar lo más cortos posibes, por eso, para pedir una respuesta que pueda ser usada en un método de menor número
-    de conexiones se debe enviar al agente la palabra ``lc''
-     \item Reglas de procedimiento.\\
- \end{itemize}
+    de conexiones se debe enviar al agente la palabra ``lc'' y para que la respuesta del agente sea útil para un método de ``Least Busy Server'', la palabra
+    a enviar debe ser ``lbs'', (comillas para aclarar).
+\item Reglas de procedimiento.\\
+El procedimiento que se debe seguir para el uso de este protocolo se basa en abrir un socket desde el balanceador de carga y enviar inmediatamente
+la palabra relacionada con el método que se está usando para hacer el equilibrio. Después la respuesta que venga por ese socket es lo que se usará
+para realizar el equilibrio.
+
+\end{itemize}

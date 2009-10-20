@@ -22,6 +22,7 @@
 \newcommand{\latexiie}{\LaTeX2{\Large$_\varepsilon$}}
 
 %Code
+	\usepackage{listings}
 	\usepackage{fancyvrb}
 	\usepackage{moreverb}
 	\usepackage{listings}
@@ -62,7 +63,7 @@ contiene los diagramas requeridos para la entrega y la explicación de los méto
 	\input{docmaestro/protocolos}
 
 \section{Diagrama de secuencias UML}
-	\input{diagramas/uml}
+%	\input{diagramas/uml}
 
 \section{Máquina de estado finito}
 	\input{diagramas/maquina}
@@ -72,13 +73,16 @@ contiene los diagramas requeridos para la entrega y la explicación de los méto
 	En todos los métodos se espera leer un arreglo con las direcciones de servidores que estará contenida en un archivo de configuración.
 	\begin{itemize}
 	\item Round Robin.
-	\input{seudo/roundrobin}
+		\input{seudo/roundrobin}
 	\item Menor número de conexiones.
-	\input{seudo/leastconnections}
+		$\triangle$ Primera aproximación a este método.
+		\input{seudo/leastconnections}
+		$\triangle$ Aproximación definitiva a este método.
+		\input{seudo/leastconnections2}
 	\item Carga en servidor.
-	\input{seudo/agent}
+		\input{seudo/agent}
 	\item Método del grupo.
-	\input{seudo/nuestro}
+		\input{seudo/nuestro}
 	\end{itemize}
 	
 	$\triangle$ PS: En los seudo códigos se puede ver que en muchos pasos se debe escribir y leer información, esto se debe a que mediante el uso

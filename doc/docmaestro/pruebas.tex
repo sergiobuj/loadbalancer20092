@@ -29,7 +29,7 @@ Esta máquina realiza las peticiones mediante un explorador Safari.\\ \\
 Las pruebas realizadas al método de balanceo LBS que requiere un agente en el servidor se realizó con dos máquinas, un portátil y un servidor.
 En las dos máquinas se corrió una aplicación en blanco, para el servidor se corrió en Apache y en el portátil una aplicación en blanco en Ruby on Rails
 con servidor Webrick.\\
-La prueba consistió en correr un ``fork bomb" con el siguiente código en C:
+La prueba consistió en correr un ``fork bomb'' con el siguiente código en C:
 
 \begin{lstlisting}[language=C]
 int main()
@@ -42,4 +42,6 @@ int main()
 \end{lstlisting}
 
 El cual al cabo de unos segundos eleva la carga del procesador del servidor a un punto en el que podíamos observar cuando dejaba de enviar las
-peticiones al servidor y cambiaba al portátil, también después de detener la "bomba de procesos" veíamos como el balanceador enviaba las nuevas peticiones al servidor.
+peticiones al servidor y cambiaba al portátil, también después de detener la ``bomba de procesos'' veíamos como el balanceador enviaba las nuevas
+peticiones al servidor.\\
+

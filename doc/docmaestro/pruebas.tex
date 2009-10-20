@@ -1,0 +1,25 @@
+Todas las pruebas del balanceador de cargas fueron a pequeña escala, el ambiente de pruebas fueron dos portátiles, donde cada portátil corría dos
+servidores web con páginas de inicio de desarrollos en blanco de Ruby on Rails y drupal. Una de las máquinas ejecutaba el balanceador de cargas y
+desde las dos se hacían peticiones que recibía el balanceador de carga.\\ \\
+
+Las máquinas corrieron con estas configuraciones:
+Portátil 1: IP:10.0.1.5
+\begin{center}
+\begin{tabular}{ l r }
+Aplicación & Puerto \\ \hline
+ROR &  4000 \\
+Drupal  & 5000\\
+LoadBalancer & 80 \\
+\end{tabular}
+\end{center}
+Esta máquina realiza las peticiones mediante un explorador Firefox.\\ \\
+
+Portátil 2: IP:10.0.1.4
+\begin{center}
+\begin{tabular}{ l r }
+Aplicación & Puerto \\ \hline
+ROR  & 4000 \\
+Drupal  & 5000\\
+\end{tabular}
+\end{center}
+Esta máquina realiza las peticiones mediante un explorador Safari.\\ \\
